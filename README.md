@@ -58,7 +58,7 @@ python3 manage.py migrate
 ```
 python3 manage.py runserver
 ```
-# Frontend
+### Frontend
 Клонировать репозиторий и перейти в него в командной строке:
 
 ```
@@ -244,21 +244,21 @@ dockerhub_username: ваш_логин_на_докерхабе
 - В корне проекта есть файл `kittygram_workflow.yml`.
 
 ## Примеры запросов
-
+```
 GET /api
 ```
 **Образец ответа**
-```
+```json
 {
     "cats": "http://kittygramy.ddns.net/api/cats/",
     "achievements": "http://kittygramy.ddns.net/api/achievements/"
 }
 ```
-
+```
 GET /api/cats/
 ```
 **Образец ответа**
-```
+```json
 {
     "count": 0,
     "next": null,
@@ -266,6 +266,7 @@ GET /api/cats/
     "results": []
 }
 ```
+
 ## Технологии
 - [Python 3.10.12](https://www.python.org/)
 - [node.js 18.17.1](https://nodejs.org/en)
