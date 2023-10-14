@@ -7,6 +7,79 @@ Kittygram - сервис для любителей котиков.
 - Добавлять новые и присваивать уже существующие достижения. 
 - Просматривать чужих котов и их достижения.
 
+## Как запустить проект:
+### Backend
+Клонировать репозиторий и перейти в него в командной строке:
+
+```
+git clone https://github.com/yandex-praktikum/kittygram_backend.git
+```
+
+```
+cd kittygram_backend
+```
+
+Cоздать и активировать виртуальное окружение:
+
+```
+python3 -m venv env
+```
+
+* Если у вас Linux/macOS
+
+    ```
+    source env/bin/activate
+    ```
+
+* Если у вас windows
+
+    ```
+    source env/scripts/activate
+    ```
+
+```
+python3 -m pip install --upgrade pip
+```
+
+Установить зависимости из файла requirements.txt:
+
+```
+pip install -r requirements.txt
+```
+
+Выполнить миграции:
+
+```
+python3 manage.py migrate
+```
+
+Запустить проект:
+
+```
+python3 manage.py runserver
+```
+# Frontend
+Клонировать репозиторий и перейти в него в командной строке:
+
+```
+git clone https://github.com/yandex-praktikum/kittygram_frontend.git
+```
+```
+cd kittygram_frontend
+```
+
+Установить зависимости:
+
+```
+npm i
+```
+
+Запустить проект:
+
+```
+npm run start
+```
+
 ## Установка 
 
 1. Клонируйте репозиторий на свой компьютер:
@@ -169,6 +242,30 @@ dockerhub_username: ваш_логин_на_докерхабе
 - Проект Kittygram доступен по доменному имени, указанному в `tests.yml`.
 - Пуш в ветку main запускает тестирование и деплой Kittygram, а после успешного деплоя вам приходит сообщение в телеграм.
 - В корне проекта есть файл `kittygram_workflow.yml`.
+
+## Примеры запросов
+
+GET /api
+```
+**Образец ответа**
+```
+{
+    "cats": "http://kittygramy.ddns.net/api/cats/",
+    "achievements": "http://kittygramy.ddns.net/api/achievements/"
+}
+```
+
+GET /api/cats/
+```
+**Образец ответа**
+```
+{
+    "count": 0,
+    "next": null,
+    "previous": null,
+    "results": []
+}
+```
 ## Технологии
 - [Python 3.10.12](https://www.python.org/)
 - [node.js 18.17.1](https://nodejs.org/en)
@@ -178,6 +275,8 @@ dockerhub_username: ваш_логин_на_докерхабе
 - [Gunicorn 20.1.0](https://gunicorn.org/)
 - [Docker](https://hub.docker.com/)
 - [certbot](https://certbot.eff.org/instructions?ws=nginx&os=ubuntufocal)
+
+
 
 ### Автор
 [Усеинов Эмир](https://github.com/R1M1R)
